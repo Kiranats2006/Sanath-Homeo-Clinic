@@ -15,3 +15,13 @@ mongoose.connect(MONGO_URI)
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+//Endpoints-use
+const appointmentRoutes=require('./routes/appointments')
+app.use('/appointments', appointmentRoutes);
+const branchRoutes=require('./routes/branches');
+app.use('/branch',branchRoutes);
+const notificationRoutes=require('./routes/notifications');
+app.use('/notification', notificationRoutes);
+const patientRoutes=require('./routes/patients');
+app.use('/patients',patientRoutes);
